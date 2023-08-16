@@ -74,12 +74,24 @@ const productos = [
     },
     {
         id: 12,
+        nombre: "CD Folklore",
+        precio: 5000,
+        imagen: "assets/images/folklore/cd-deluxe.webp"
+    },
+    {
+        id: 13,
+        nombre: "CD Evermore",
+        precio: 5500,
+        imagen: "assets/images/evermore/cd-deluxe.webp"
+    },
+    {
+        id: 14,
         nombre: "CD Midnights",
         precio: 5000,
         imagen: "assets/images/midnights/cd-moonstone_blue2.webp"
     },
     {
-        id: 13,
+        id: 15,
         nombre: "Vinilo Midnights",
         precio: 12000,
         imagen: "assets/images/midnights/vinilo-moonstone_blue.webp"
@@ -115,8 +127,7 @@ productos.forEach((producto) => {
     })
 });
 
-
-abrirCarrito.addEventListener("click", () => {
+const verCarrito = () => {
     contenidoCarrito.innerHTML = ""
     contenidoCarrito.style.display = "block"
     const carritoHeader = document.createElement("div")
@@ -147,6 +158,14 @@ abrirCarrito.addEventListener("click", () => {
             <p class="precio">$${producto.precio}</p>
         `;
         contenidoCarrito.append(carritoContent);
+
+        let eliminarProductos = document.createElement("div")
+        eliminarProductos.innerHTML = `
+            <img src="assets/icons/x.svg" alt="x">
+        `
+        eliminarProductos.className = "eliminar-productos"
+        carritoContent.append(eliminarProductos)
+        eliminarProductos.addEventListener("click", eliminarDeCarrito)
     })
 
     const total = carrito.reduce((acc, el) => acc + el.precio, 0)
@@ -154,7 +173,19 @@ abrirCarrito.addEventListener("click", () => {
     totalCompra.className = "contenido-total"
     totalCompra.innerHTML = `Total a pagar: $${total}`;
     contenidoCarrito.append(totalCompra)
-})
+}  
+
+abrirCarrito.addEventListener("click", verCarrito)
+
+const eliminarDeCarrito = () => {
+    const encontrarID = carrito.find((element) => element.id)
+    carrito = carrito.filter((carritoID) => {
+        return carritoID !== encontrarID;
+    });
+    guardarLocalStorage()
+    verCarrito();
+}
+
 
 const guardarLocalStorage = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito))
