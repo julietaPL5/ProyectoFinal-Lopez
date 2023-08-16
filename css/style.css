@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1e7f9;
+}
+
+header {
+  background-color: #a791bf;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+header .contenedor-titulo {
+  display: flex;
+  justify-content: center;
+}
+header .contenedor-titulo img {
+  height: 50px;
+  width: 230px;
+  margin: 10px;
+}
+header .carrito-icono {
+  height: 40px;
+  width: 40px;
+}
+
+.contenido-productos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 15px;
+}
+.contenido-productos .card {
+  text-align: center;
+  background-color: #a791bf;
+  border-radius: 5px;
+  margin: 10px;
+  width: 200px;
+}
+.contenido-productos .card img {
+  height: 150px;
+  width: 150px;
+}
+.contenido-productos .card .nombre {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+.contenido-productos .card .precio {
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.agregar-carrito {
+  background-color: #f1e7f9;
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 150px;
+  transition: 0.3s;
+}
+.agregar-carrito:hover {
+  background-color: #8367a1;
+}
+
+/*.hover08 div img {
+    width: 10vw;
+    height: 10vw;
+
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover08 div:hover img {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}*/
+
+/*# sourceMappingURL=style.css.map */
