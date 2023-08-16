@@ -86,8 +86,7 @@ const productos = [
     }
 ]
 
-let carrito = []
-
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 productos.forEach((producto) => {
     let contenido = document.createElement("div")
@@ -107,18 +106,19 @@ productos.forEach((producto) => {
 
     agregarAlCarrito.addEventListener("click", () => {
         carrito.push({
-            id: producto,
-            imagen: producto,
-            nombre: producto,
-            precio: producto
+            id: producto.id,
+            imagen: producto.imagen,
+            nombre: producto.nombre,
+            precio: producto.precio
         })
+        guardarLocalStorage()
     })
-
-    
 });
 
 
 abrirCarrito.addEventListener("click", () => {
+    contenidoCarrito.innerHTML = ""
+    contenidoCarrito.style.display = "block"
     const carritoHeader = document.createElement("div")
     carritoHeader.className = "carrito-header"
     carritoHeader.innerHTML = `
@@ -126,9 +126,15 @@ abrirCarrito.addEventListener("click", () => {
     `;
     contenidoCarrito.append(carritoHeader)
 
-    const modalButton = document.createElement("h1")
-    modalButton.innerText = "x"
+    const modalButton = document.createElement("div")
     modalButton.className = "carrito-header-button"
+    modalButton.innerHTML = `
+        <img src="assets/icons/x.svg" alt="x">
+    `;
+
+    modalButton.addEventListener("click", () => {
+        contenidoCarrito.style.display = "none"
+    })
 
     carritoHeader.append(modalButton);
 
@@ -136,12 +142,21 @@ abrirCarrito.addEventListener("click", () => {
         let carritoContent = document.createElement("div")
         carritoContent.className = "carrito-content"
         carritoContent.innerHTML = `
-            <p>${producto.nombre}</p>
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <p class="nombre">${producto.nombre}</p>
+            <p class="precio">$${producto.precio}</p>
         `;
-
         contenidoCarrito.append(carritoContent);
     })
+
+    const total = carrito.reduce((acc, el) => acc + el.precio, 0)
+    const totalCompra = document.createElement("div")
+    totalCompra.className = "contenido-total"
+    totalCompra.innerHTML = `Total a pagar: $${total}`;
+    contenidoCarrito.append(totalCompra)
 })
 
-
+const guardarLocalStorage = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
 
