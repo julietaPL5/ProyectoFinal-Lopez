@@ -122,8 +122,6 @@ header .carrito-icono {
 }
 .contenido-carrito .carrito-content .eliminar-productos {
   cursor: pointer;
-}
-.contenido-carrito .carrito-content .eliminar-productos img {
   height: 30px;
   width: 30px;
 }
@@ -137,6 +135,28 @@ header .carrito-icono {
   padding: 20px;
   text-align: center;
   padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.contenido-carrito .contenido-total button {
+  background-color: #614282;
+  border: 0;
+  border-radius: 5px;
+  margin-left: 25px;
+  height: 30px;
+  width: 150px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contenido-carrito .contenido-total button a {
+  color: #000;
+  text-decoration: none;
+}
+.contenido-carrito .contenido-total button:hover {
+  background-color: #f1e7f9;
 }
 
 /*.hover08 div img {

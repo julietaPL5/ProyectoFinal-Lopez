@@ -1,0 +1,94 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "CD Fearless (Taylor's Version)",
+            "precio": 6000,
+            "imagen": "assets/images/fearless/cd.webp"
+        },
+        {
+            "id": 2,
+            "nombre": "Vinilo Fearless (Taylor's Version)",
+            "precio": 13000,
+            "imagen": "assets/images/fearless/vinilo.webp"
+        },
+        {
+            "id": 3,
+            "nombre": "Cassette Fearless (Taylor's Version)",
+            "precio": 11000,
+            "imagen": "assets/images/fearless/cassette.webp"
+        },
+        {
+            "id": 4,
+            "nombre": "CD Speak Now (Taylor's Version)",
+            "precio": 7000,
+            "imagen": "assets/images/speak-now/cd.webp"
+        },
+        {
+            "id": 5,
+            "nombre": "Vinilo Speak Now (Taylor's Version)",
+            "precio": 14000,
+            "imagen": "assets/images/speak-now/vinilo.webp"
+        },
+        {
+            "id": 6,
+            "nombre": "Cassette Speak Now (Taylor's Version)",
+            "precio": 11500,
+            "imagen": "assets/images/speak-now/cassette.webp"
+        },
+        {
+            "id": 7,
+            "nombre": "CD Red (Taylor's Version)",
+            "precio": 5000,
+            "imagen": "assets/images/red/cd.webp"
+        },
+        {
+            "id": 8,
+            "nombre": "Vinilo Red (Taylor's Version)",
+            "precio": 13000,
+            "imagen": "assets/images/red/vinilo.webp"
+        },
+        {
+            "id": 9,
+            "nombre": "CD 1989 (Taylor's Version)",
+            "precio": 7000,
+            "imagen": "assets/images/1989/cd.webp"
+        },
+        {
+            "id": 10,
+            "nombre": "Vinilo 1989 (Taylor's Version)",
+            "precio": 13000,
+            "imagen": "assets/images/1989/vinilo.webp"
+        },
+        {
+            "id": 11,
+            "nombre": "Cassette 1989 (Taylor's Version)",
+            "precio": 11000,
+            "imagen": "assets/images/1989/cassette.webp"
+        },
+        {
+            "id": 12,
+            "nombre": "CD Folklore",
+            "precio": 5000,
+            "imagen": "assets/images/folklore/cd-deluxe.webp"
+        },
+        {
+            "id": 13,
+            "nombre": "CD Evermore",
+            "precio": 5500,
+            "imagen": "assets/images/evermore/cd-deluxe.webp"
+        },
+        {
+            "id": 14,
+            "nombre": "CD Midnights",
+            "precio": 5000,
+            "imagen": "assets/images/midnights/cd-moonstone_blue2.webp"
+        },
+        {
+            "id": 15,
+            "nombre": "Vinilo Midnights",
+            "precio": 12000,
+            "imagen": "assets/images/midnights/vinilo-moonstone_blue.webp"
+        }
+    ]
+}

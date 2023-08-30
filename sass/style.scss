@@ -125,10 +125,8 @@ header {
         margin: 10px;
         .eliminar-productos {
             cursor: pointer;
-            img {
-                height: 30px;
-                width: 30px;
-            }
+            height: 30px;
+            width: 30px;
         }
     }
     div img {
@@ -141,6 +139,29 @@ header {
         padding: 20px;
         text-align: center;
         padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        button {
+            background-color: #614282;
+            border: 0;
+            border-radius: 5px;
+            margin-left: 25px;
+            height: 30px;
+            width: 150px;
+            font-size: 17px;
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            
+            cursor: pointer;
+            transition: .3s;
+            &:hover {
+                background-color: #f1e7f9;
+            }
+        }
     }
 }
 
