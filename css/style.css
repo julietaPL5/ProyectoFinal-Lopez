@@ -33,6 +33,11 @@ header .carrito-icono {
   cursor: pointer;
 }
 
+.filtro1989 img {
+  width: 200px;
+  height: 200px;
+}
+
 .contenido-productos {
   display: flex;
   justify-content: space-around;
@@ -159,18 +164,106 @@ header .carrito-icono {
   background-color: #f1e7f9;
 }
 
-/*.hover08 div img {
-    width: 10vw;
-    height: 10vw;
-
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+.contenido-compra {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
-.hover08 div:hover img {
-	-webkit-filter: grayscale(0);
-	filter: grayscale(0);
-}*/
+.contenido-compra .contenido-carrito-compra {
+  width: 600px;
+}
+.contenido-compra .contenido-carrito-compra .titulo-carrito {
+  font-size: 32px;
+}
+.contenido-compra .contenido-carrito-compra .carrito-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #a791bf;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 7px;
+  font-size: 20px;
+}
+.contenido-compra .contenido-carrito-compra .carrito-content img {
+  height: 150px;
+  width: 150px;
+}
+.contenido-compra .contenido-carrito-compra .contenido-total {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #a791bf;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 7px;
+}
+.contenido-compra .compra-content {
+  width: 600px;
+}
+.contenido-compra .compra-content h1 {
+  margin-bottom: 12px;
+}
+.contenido-compra .compra-content .formulario {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+.contenido-compra .compra-content .formulario h2 {
+  margin: 13px 0;
+}
+.contenido-compra .compra-content .formulario input {
+  height: 40px;
+  width: auto;
+  padding-left: 8px;
+  margin: 10px 0 20px 0;
+  border-radius: 5px;
+  border: 1px solid #b4acba;
+  transition: 0.15s;
+}
+.contenido-compra .compra-content .formulario input:focus {
+  outline: none;
+  border: 1px solid #a791bf;
+  box-shadow: 0 0 10px 1px #a791bf;
+}
+.contenido-compra .compra-content .formulario button {
+  text-align: center;
+  background-color: #a791bf;
+  border-radius: 5px;
+  border: 0;
+  padding: 7px;
+  width: auto;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contenido-compra .compra-content .formulario button:hover {
+  background-color: #614282;
+}
+
+@media (max-width: 1300px) {
+  .contenido-compra {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 650px) {
+  .contenido-compra .contenido-carrito-compra {
+    width: auto;
+  }
+  .contenido-compra .contenido-carrito-compra .carrito-content {
+    flex-direction: column;
+  }
+  .contenido-compra .contenido-carrito-compra .carrito-content .nombre {
+    margin: 10px 0;
+  }
+  .contenido-compra .compra-content {
+    width: 300px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

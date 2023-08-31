@@ -3,7 +3,7 @@
 const contenidoProductos = document.getElementById("contenidoProductos")
 const abrirCarrito = document.getElementById("abrirCarrito")
 const contenidoCarrito = document.getElementById("contenidoCarrito")
-const contenidoCompra = document.getElementById("contenidoCompra")
+
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
@@ -80,7 +80,7 @@ const verCarrito = () => {
             eliminarDeCarrito(producto.id)
         })
     })
-
+    
     const total = carrito.reduce((acc, el) => acc + el.precio, 0)
     const totalCompra = document.createElement("div")
     totalCompra.className = "contenido-total"
@@ -89,6 +89,7 @@ const verCarrito = () => {
         <button id="btnPagar"><a href="compra.html">Pagar</a></button>
     `;
     contenidoCarrito.append(totalCompra)
+    localStorage.setItem("localStorageTotalCompra", JSON.stringify(total))
 }  
 
 abrirCarrito.addEventListener("click", verCarrito)
@@ -97,9 +98,9 @@ const eliminarDeCarrito = (id) => {
     const encontrarID = carrito.find((element) => element.id === id)
     carrito = carrito.filter((carritoID) => {
         return carritoID !== encontrarID;
-    });
+    })
     guardarLocalStorage()
-    verCarrito();
+    verCarrito()
 }
 
 
@@ -108,18 +109,3 @@ const guardarLocalStorage = () => {
 }
 
 
-const compra = () => {
-    let compraContent = document.createElement("div")
-    compraContent.className = "compra-content"
-    compraContent.innerHTML = `
-        <p>Finaliza tu compra</p>
-        
-        <label id="labelNombre" for="nombre">Nombre:</label>
-        <input type="text" name="Nombre" id="Nombre" placeholder="Nombre">
-
-        <label for="Correo">Correo:</label>
-        <input type="email" name="Correo" id="Correo" placeholder="Correo">
-
-    `;
-}
-contenidoCompra.append(compraContent)

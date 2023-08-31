@@ -1,4 +1,4 @@
-//colores #0f1d28 #614282 #a791bf #dccfeb #f1e7f9 #8367a1
+//colores #0f1d28 #614282 #a791bf #dccfeb #f1e7f9 #8367a1 #b4acba
 
 
 * {
@@ -36,6 +36,12 @@ header {
     }
 }
 
+.filtro1989 {
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
 
 
 .contenido-productos {
@@ -155,7 +161,6 @@ header {
                 color: #000;
                 text-decoration: none;
             }
-            
             cursor: pointer;
             transition: .3s;
             &:hover {
@@ -166,31 +171,107 @@ header {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*.hover08 div img {
-    width: 10vw;
-    height: 10vw;
-
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+.contenido-compra {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    .contenido-carrito-compra {
+        width: 600px;
+        .titulo-carrito {
+            font-size: 32px;
+        }
+        .carrito-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center;
+            background-color: #a791bf;
+            border-radius: 5px;
+            margin: 15px 0;
+            padding: 7px;
+            font-size: 20px;
+            img {
+                height: 150px;
+                width: 150px;
+            }
+        }
+        .contenido-total {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #a791bf;
+            border-radius: 5px;
+            margin: 15px 0;
+            padding: 7px;
+        }
+    }
+    .compra-content {
+        width: 600px;
+        h1 {
+            margin-bottom: 12px;
+        }
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            h2 {
+                margin: 13px 0;
+            }
+            input {
+                height: 40px;
+                width: auto;
+                padding-left: 8px;
+                margin: 10px 0 20px 0;
+                border-radius: 5px;
+                border: 1px solid #b4acba;
+                transition: .15s;
+                &:focus {
+                    outline: none;
+                    border: 1px solid #a791bf;
+                    box-shadow: 0 0 10px 1px #a791bf;
+                }
+            }
+            button {
+                text-align: center;
+                background-color: #a791bf;
+                border-radius: 5px;
+                border: 0;
+                padding: 7px;
+                width: auto;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: .3s;
+                &:hover {
+                    background-color: #614282;
+                }
+            }
+        }
+    }
 }
-.hover08 div:hover img {
-	-webkit-filter: grayscale(0);
-	filter: grayscale(0);
-}*/
 
+@media (max-width: 1300px) {
+    .contenido-compra {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
+@media (max-width: 650px) {
+    .contenido-compra {
+        .contenido-carrito-compra {
+            width: auto;
+            .carrito-content {
+                flex-direction: column;
+                .nombre {
+                    margin: 10px 0;
+                }
+            }
+        }
+        .compra-content {
+            width: 300px;
+        }
+    }
+}
