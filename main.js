@@ -1,8 +1,8 @@
 
 
-const contenidoProductos = document.getElementById("contenidoProductos")
-const abrirCarrito = document.getElementById("abrirCarrito")
-const contenidoCarrito = document.getElementById("contenidoCarrito")
+const contenidoProductos = document.getElementById("contenidoProductos");
+const abrirCarrito = document.getElementById("abrirCarrito");
+const contenidoCarrito = document.getElementById("contenidoCarrito");
 
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []
@@ -21,13 +21,13 @@ fetch ("productos.json")
                 <p class="nombre">${producto.nombre}</p>
                 <p class="precio">Precio: $${producto.precio}</p>
             `;
-            contenidoProductos.append(contenido)
+            contenidoProductos.append(contenido);
 
             let agregarAlCarrito = document.createElement("button")
             agregarAlCarrito.innerText = "Agregar al carrito"
             agregarAlCarrito.className = "agregar-carrito"
 
-            contenido.append(agregarAlCarrito)
+            contenido.append(agregarAlCarrito);
 
             agregarAlCarrito.addEventListener("click", () => {
                 carrito.push({
@@ -36,7 +36,7 @@ fetch ("productos.json")
                     nombre: producto.nombre,
                     precio: producto.precio
                 })
-                guardarLocalStorage()
+                guardarLocalStorage();
             })
         });
     })
@@ -50,7 +50,7 @@ const verCarrito = () => {
     carritoHeader.innerHTML = `
         <h1 class="carrito-header-titulo">Carrito</h1>
     `;
-    contenidoCarrito.append(carritoHeader)
+    contenidoCarrito.append(carritoHeader);
 
     const modalButton = document.createElement("div")
     modalButton.className = "carrito-header-button"
@@ -88,19 +88,19 @@ const verCarrito = () => {
         <p>Total a pagar: $${total}</p>
         <button id="btnPagar"><a href="compra.html">Pagar</a></button>
     `;
-    contenidoCarrito.append(totalCompra)
-    localStorage.setItem("localStorageTotalCompra", JSON.stringify(total))
+    contenidoCarrito.append(totalCompra);
+    localStorage.setItem("localStorageTotalCompra", JSON.stringify(total));
 }  
 
-abrirCarrito.addEventListener("click", verCarrito)
+abrirCarrito.addEventListener("click", verCarrito);
 
 const eliminarDeCarrito = (id) => {
     const encontrarID = carrito.find((element) => element.id === id)
     carrito = carrito.filter((carritoID) => {
         return carritoID !== encontrarID;
     })
-    guardarLocalStorage()
-    verCarrito()
+    guardarLocalStorage();
+    verCarrito();
 }
 
 
